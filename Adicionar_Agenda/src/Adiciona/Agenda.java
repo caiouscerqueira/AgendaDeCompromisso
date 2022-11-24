@@ -1,6 +1,7 @@
 package Adiciona;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Agenda {
@@ -25,11 +26,15 @@ public class Agenda {
 		return calendario;
 	}
 	
-	public String getNome() {
-		return nome;
+	public void exibeCalendario() {
+		for(int i = 0; i < agenda.size(); i++) {
+			int mes_calendario = agenda.get(i).get(Calendar.MONTH) + 1;
+			System.out.println("Data: " + agenda.get(i).get(Calendar.DAY_OF_MONTH) + "/" + mes_calendario  + "/" + agenda.get(i).get(Calendar.YEAR));
+			System.out.println("Descrição: " + descricao.get(i));
+		}
 	}
 	
-	public String getDescricao() {
-		return descricao.get(0);
+	public String getNome() {
+		return nome;
 	}
 }
